@@ -96,14 +96,13 @@ public class Poker {
 
     /**
      * 出牌
+     *
+     * @param str
+     * @return
      */
-
-    public void outCards(String str) {
-
+    public int outCards(String str) {
         Validator validator = new Validator();
-        validator.compareType(str);
-
-
+        return validator.compareType(str);
     }
 
     /*public void test(Player firstPlayer, Player secondPlayer, Player thirdPlayer, Player fourthPlayer) {

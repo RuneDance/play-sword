@@ -58,7 +58,9 @@ public class Main {
             }
             System.out.print("请" + list.get(i) + "出牌：");
             String card = scanner.next();
-            poker.outCards(card);
+            if (poker.outCards(card) == -1) {
+
+            }
         }
 
         //poker.test(firstPlayer, secondPlayer, thirdPlayer, fourthPlayer);
