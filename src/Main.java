@@ -44,25 +44,31 @@ public class Main {
         //发牌
         poker.distributionCards(firstPlayer.getTreeSet(), secondPlayer.getTreeSet(), thirdPlayer.getTreeSet(), fourthPlayer.getTreeSet());
 
-        //出牌
-        for (int i = 1; i <= 4; i++) {
-            //看牌
-            if (i == 1) {
-                poker.queryCards(firstPlayer);
-            } else if (i == 2) {
-                poker.queryCards(secondPlayer);
-            } else if (i == 3) {
-                poker.queryCards(thirdPlayer);
-            } else if (i == 4) {
-                poker.queryCards(fourthPlayer);
-            }
-            System.out.print("请" + list.get(i) + "出牌：");
+        //查询红桃4玩家
+        String first = poker.queryRedPeach(firstPlayer);
+        String second = poker.queryRedPeach(secondPlayer);
+        String third = poker.queryRedPeach(thirdPlayer);
+        String fourth = poker.queryRedPeach(fourthPlayer);
+        if (first != null) {
+            poker.queryCards(firstPlayer);
+            System.out.print("请" + list.get(0) + "出牌：");
             String card = scanner.next();
-            if (poker.outCards(card) == -1) {
+            while (poker.outCards(card) == -1) {
 
             }
+        } else if (second != null) {
+            poker.queryCards(secondPlayer);
+            System.out.print("请" + list.get(1) + "出牌：");
+            String card = scanner.next();
+        } else if (third != null) {
+            poker.queryCards(thirdPlayer);
+            System.out.print("请" + list.get(2) + "出牌：");
+            String card = scanner.next();
+        } else if (fourth != null) {
+            poker.queryCards(fourthPlayer);
+            System.out.print("请" + list.get(3) + "出牌：");
+            String card = scanner.next();
         }
-
         //poker.test(firstPlayer, secondPlayer, thirdPlayer, fourthPlayer);
 
     }

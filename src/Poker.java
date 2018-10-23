@@ -70,6 +70,20 @@ public class Poker {
                 fourthPlayer.add(list.get(i));
             }
         }
+
+        //this.queryRedPeach(firstPlayer,secondPlayer,thirdPlayer,fourthPlayer);
+    }
+
+    /**
+     * 查询红桃4的玩家
+     */
+    public String queryRedPeach(Player player) {
+        for (Iterator iter = player.getTreeSet().iterator(); iter.hasNext(); ) {
+            if (map.get(iter.next()).equals("♥4")) {
+                return player.getName();
+            }
+        }
+        return null;
     }
 
     /**
